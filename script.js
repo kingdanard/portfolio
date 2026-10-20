@@ -435,7 +435,71 @@ const projects = {
 			"Autonomous Robotics",
 			"Forklift Mechanism"
 		]
-	}
+	},
+
+		9: {
+        title: "Retail Sales Performance Analysis & Dashboard",
+        tags: [
+            "Python",
+            "Pandas",
+            "EDA",
+            "Data Visualization",
+            "Streamlit"
+        ],
+        images: [
+            {
+                src: "assets/projects/project9/sales_by_category.png",
+                alt: "Sales by Category",
+                caption: "Sales performance across product categories"
+            },
+            {
+                src: "assets/projects/project9/sales_by_subcategory.png",
+                alt: "Sales by Subcategory",
+                caption: "Sales comparison across product subcategories"
+            },
+            {
+                src: "assets/projects/project9/sales_by_region.png",
+                alt: "Sales by Region",
+                caption: "Sales distribution across regions"
+            },
+            {
+                src: "assets/projects/project9/monthly_sales_trend.png",
+                alt: "Monthly Sales Trend",
+                caption: "Monthly sales trend over time"
+            },
+            {
+                src: "assets/projects/project9/sales_by_segment.png",
+                alt: "Sales by Customer Segment",
+                caption: "Sales performance by customer segment"
+            },
+            {
+            src: "assets/projects/project9/Visual Dashboard_st.png",
+            alt: "Superstore Sales Dashboard",
+            caption: "Interactive Streamlit dashboard with sales KPIs, filters, and visualizations"
+			}
+        ],
+        bullets: [
+            "The goal of this project was to analyze retail sales data and identify patterns in product categories, subcategories, regions, and customer segments.",
+            "The Superstore dataset was loaded and explored using Pandas to understand its structure, data types, and key variables.",
+            "Data preparation included converting order and shipping dates into datetime format and checking for missing values and duplicate records.",
+            "Exploratory Data Analysis (EDA) was performed to compare sales performance across categories, subcategories, regions, and customer segments.",
+            "Visualizations were created to communicate key sales patterns and monthly trends.",
+            "An interactive Streamlit dashboard was developed with filters for region, category, and customer segment, alongside sales KPIs and charts."
+        ],
+        technologies: [
+            "Python",
+            "Pandas",
+            "Matplotlib",
+            "Seaborn",
+            "Streamlit",
+            "Google Colab",
+            "Kaggle",
+            "GitHub"
+        ],
+        github: "https://github.com/kingdanard/Retail-Sales-Performance-Analysis",
+        dashboard: "https://superstore-analytics-da.streamlit.app/"
+    },
+
 };
 
 const notableProjects = {
@@ -668,6 +732,7 @@ const galleryNext = document.getElementById("gallery-next");
 const starBullets = document.getElementById("star-bullets");
 const technologyList = document.getElementById("technology-list");
 const githubLink = document.getElementById("github-link");
+const dashboardLink = document.getElementById("dashboard-link");
 
 let currentImages = [];
 let currentImageIndex = 0;
@@ -783,6 +848,14 @@ function openCaseStudy(projectId, category) {
 	} else {
 		githubLink.style.display = "none";
 	}
+	
+		if (project.dashboard) {
+		dashboardLink.href = project.dashboard;
+		dashboardLink.style.display = "inline-flex";
+	} else {
+		dashboardLink.style.display = "none";
+	}
+
 	
     currentImages = project.images;
     currentImageIndex = 0;
